@@ -38,7 +38,7 @@ class Router extends IlluminateRouter
 		$route = new Route($methods, $uri, $action);
 		$priority = Router::MEDIUM - $this->routes->count();
 		$route->setPriority($priority);
-		return $route;
+		return $route->setContainer($this->container);
 	}
 
 	/**
